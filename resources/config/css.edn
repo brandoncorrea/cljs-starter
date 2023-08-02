@@ -1,0 +1,7 @@
+{
+ :source-dir  "dev/stac/styles"
+ :var         stac.styles.main/screen
+ :output-file "resources/public/css/stac.css"
+ :flags       {:pretty-print? true
+               :vendors       ["webkit" "moz" "o"]}
+ }

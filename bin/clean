@@ -1,0 +1,12 @@
+#! /bin/sh
+
+rm -rf target
+rm -rf tmp
+rm -rf resources/specs/cljs
+rm -rf resources/public/cljs
+rm -rf resources/public/css
+rm -rf .cpcache
+rm -f .lein-repl-history
+rm -f .specljs-timestamp
+rm -rf node_modules
+rm package-lock.json

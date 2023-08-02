@@ -1,0 +1,29 @@
+{
+ :env-keys    ["me.env" "ME_ENV"]
+ :run-cmd     "node resources/specs/speclj.js"
+ :development {:cache-analysis true
+               :optimizations  :none
+               :output-dir     "resources/specs/cljs/"
+               :output-to      "resources/specs/cljs/stac_dev.js"
+               :pretty-print   true
+               :source-map     true
+               :sources        ["spec/cljc" "spec/cljs" "src/cljc" "src/cljs"]
+               :specs          true
+               :verbose        false
+               :watch-fn       c3kit.scaffold.cljs/on-dev-compiled
+               :parallel-build true
+               }
+ :production  {
+               :cache-analysis false
+               :infer-externs  true
+               :optimizations  :advanced
+               :output-dir     "resources/public/cljs/"
+               :output-to      "resources/public/cljs/stac.js"
+               :pretty-print   false
+               :sources        ["src/cljc" "src/cljs"]
+               :specs          false
+               :verbose        false
+               :language-in    :ecmascript-next
+               :language-out   :ecmascript-next
+               }
+ }
