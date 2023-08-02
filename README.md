@@ -41,4 +41,4 @@ A static website built with ClojureScript.
 ## Local HTTP Server
 
     cd resources/public
-    http-server
+    http-server --proxy "http://localhost:8080?"
