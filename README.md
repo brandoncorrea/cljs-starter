@@ -96,5 +96,4 @@ Note: Your `:sandbox/keyword` will need to exactly match your route: `"/sandbox/
 
 ## Local HTTP Server
 
-    cd resources/public
-    http-server --proxy "http://localhost:8080?"
+    bin/server

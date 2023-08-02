@@ -1,0 +1,4 @@
+#! /bin/sh
+
+pushd resources/public
+http-server --proxy "http://localhost:8080?"
