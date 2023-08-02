@@ -30,6 +30,62 @@ A static website built with ClojureScript.
     # build cljs once (for production)
     clj -Mcljs once production
 
+## Sandbox
+
+### Configuration
+
+The sandbox pages will only appear in the `development` environment.
+To show them, update `main.cljs` with the `"development"` configuration.
+
+For production, you will want these hidden. Update `main.cljs` to start up with `"production"`.
+
+### Playing in the Sandbox
+
+A sandbox page is just an implementation of `page/render`.
+
+1. Create a cljs file under `src/cljs/stac/sandbox` - call it whatever you'd like!
+
+```clojure
+(ns stac.sandbox.example
+  (:require [stac.page :as page]))
+
+(defmethod page/render :sandbox/example [_]
+  ; Your hiccup code here...
+  )
+```
+
+2. Add your new namespace to `stac.sandbox.core`
+
+```clojure
+(ns stac.sandbox.core
+  (:require ;...namespaces... 
+            [stac.sandbox.example]
+            ;...namespaces...
+    ))
+```
+
+3. Create a test for your new sandbox in `stac.router-spec`
+
+```clojure
+(context "sandbox" 
+  ; ...specs... 
+  (it-routes "/sandbox/example" :sandbox/example)
+  ; ...more specs...
+  )
+```
+
+4. Pass your test in `stac.router`
+
+```clojure
+(defn def-sandbox []
+  ; ...routes...
+  (defroute "/sandbox/example" [] (page/install! :sandbox/example))
+  ; ...more routes...
+  )
+```
+
+Note: Your `:sandbox/keyword` will need to exactly match your route: `"/sandbox/keyword"`.
+
 ## Deployment
 
     # Build cljs
