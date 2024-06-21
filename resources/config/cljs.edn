@@ -13,6 +13,15 @@
                :watch-fn       c3kit.scaffold.cljs/on-dev-compiled
                :parallel-build true
                }
+ :ci          {
+               :cache-analysis false
+               :optimizations  :advanced
+               :output-dir     "resources/public/cljs/"
+               :output-to      "resources/public/cljs/stac.js"
+               :sources        ["src/cljc" "src/cljs" "spec/cljc" "spec/cljs"]
+               :specs          true
+               :verbose        false
+               }
  :production  {
                :cache-analysis false
                :infer-externs  true
@@ -23,7 +32,5 @@
                :sources        ["src/cljc" "src/cljs"]
                :specs          false
                :verbose        false
-               :language-in    :ecmascript-next
-               :language-out   :ecmascript-next
                }
  }

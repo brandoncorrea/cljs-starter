@@ -2,6 +2,7 @@
 .cpcache/
 .DS_Store
 .java-version
+.env
 .sass-cache/
 /.idea
 /resources/public/cljs
