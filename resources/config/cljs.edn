@@ -1,36 +1,37 @@
 {
- :env-keys    ["me.env" "ME_ENV"]
- :ns-prefix   "stac"
- :development {:cache-analysis true
-               :optimizations  :none
-               :output-dir     "resources/public/cljs/"
-               :output-to      "resources/public/cljs/stac.js"
-               :pretty-print   true
-               :source-map     true
-               :sources        ["spec/cljc" "spec/cljs" "src/cljc" "src/cljs"]
-               :specs          true
-               :verbose        false
-               :watch-fn       c3kit.scaffold.cljs/on-dev-compiled
-               :parallel-build true
-               }
- :ci          {
-               :cache-analysis false
-               :optimizations  :advanced
-               :output-dir     "resources/public/cljs/"
-               :output-to      "resources/public/cljs/stac.js"
-               :sources        ["src/cljc" "src/cljs" "spec/cljc" "spec/cljs"]
-               :specs          true
-               :verbose        false
-               }
- :production  {
-               :cache-analysis false
-               :infer-externs  true
-               :optimizations  :advanced
-               :output-dir     "resources/public/cljs/"
-               :output-to      "resources/public/cljs/stac.js"
-               :pretty-print   false
-               :sources        ["src/cljc" "src/cljs"]
-               :specs          false
-               :verbose        false
-               }
+ :env-keys       ["me.env" "ME_ENV"]
+ :ns-prefix      "stac"
+ :ignore-console ["Failed to load resource: net::ERR_FILE_NOT_FOUND"]
+ :development    {:cache-analysis true
+                  :optimizations  :none
+                  :output-dir     "resources/public/cljs/"
+                  :output-to      "resources/public/cljs/stac.js"
+                  :pretty-print   true
+                  :source-map     true
+                  :sources        ["spec/cljc" "spec/cljs" "src/cljc" "src/cljs"]
+                  :specs          true
+                  :verbose        false
+                  :watch-fn       c3kit.scaffold.cljs/on-dev-compiled
+                  :parallel-build true
+                  }
+ :ci             {
+                  :cache-analysis false
+                  :optimizations  :advanced
+                  :output-dir     "resources/public/cljs/"
+                  :output-to      "resources/public/cljs/stac.js"
+                  :sources        ["src/cljc" "src/cljs" "spec/cljc" "spec/cljs"]
+                  :specs          true
+                  :verbose        false
+                  }
+ :production     {
+                  :cache-analysis false
+                  :infer-externs  true
+                  :optimizations  :advanced
+                  :output-dir     "resources/public/cljs/"
+                  :output-to      "resources/public/cljs/stac.js"
+                  :pretty-print   false
+                  :sources        ["src/cljc" "src/cljs"]
+                  :specs          false
+                  :verbose        false
+                  }
  }
