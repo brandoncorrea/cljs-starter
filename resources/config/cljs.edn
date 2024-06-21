@@ -19,13 +19,13 @@
                   :optimizations  :advanced
                   :output-dir     "resources/public/cljs/"
                   :output-to      "resources/public/cljs/stac.js"
+                  :pretty-print   false
                   :sources        ["src/cljc" "src/cljs" "spec/cljc" "spec/cljs"]
                   :specs          true
                   :verbose        false
                   }
  :production     {
                   :cache-analysis false
-                  :infer-externs  true
                   :optimizations  :advanced
                   :output-dir     "resources/public/cljs/"
                   :output-to      "resources/public/cljs/stac.js"
