@@ -1,11 +1,11 @@
 (ns stac.styles.main
   (:refer-clojure :exclude [rem])
-  (:require [garden.def :as garden]))
+  (:require [stac.styles.core :refer :all]))
 
-(garden/defstyles screen
+(defstyles screen
 
-[:body {
-  :color "red"
-}]
+  [:body {
+    :color "red"
+  }]
 
-)
+  )

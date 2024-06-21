@@ -1,10 +1,10 @@
 {
  :env-keys    ["me.env" "ME_ENV"]
- :run-cmd     "node resources/specs/speclj.js"
+ :ns-prefix   "stac"
  :development {:cache-analysis true
                :optimizations  :none
-               :output-dir     "resources/specs/cljs/"
-               :output-to      "resources/specs/cljs/stac_dev.js"
+               :output-dir     "resources/public/cljs/"
+               :output-to      "resources/public/cljs/stac.js"
                :pretty-print   true
                :source-map     true
                :sources        ["spec/cljc" "spec/cljs" "src/cljc" "src/cljs"]

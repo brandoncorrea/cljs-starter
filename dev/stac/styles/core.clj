@@ -1,6 +1,11 @@
 (ns stac.styles.core
   (:refer-clojure :exclude [rem])
-  (:require [garden.units :as units]))
+  (:require [garden.def :as def]
+            [garden.units :as units]))
+
+(defmacro defstyles
+  "Convenience: `(garden.def/defstyles name styles*)"
+  [name & styles] `(def/defstyles ~name ~@styles))
 
 (defn px [n] (units/px n))
 (defn em [n] (units/em n))

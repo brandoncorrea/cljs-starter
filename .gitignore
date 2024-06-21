@@ -3,13 +3,6 @@
 .DS_Store
 .java-version
 .sass-cache/
-.specljs-timestamp
 /.idea
 /resources/public/cljs
 /resources/public/css
-/resources/specs/cljs
-/resources/public/css/stac.css
-node_modules/
-package-lock.json
-/datomic-pro*
-bin/transactor.properties

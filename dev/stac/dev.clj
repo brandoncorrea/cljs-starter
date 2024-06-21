@@ -1,14 +1,17 @@
 (ns stac.dev
   (:require [c3kit.apron.log :as log]
             [c3kit.scaffold.cljs :as cljs]
-            [c3kit.scaffold.css :as css]))
+            [c3kit.scaffold.css :as css]
+            [clojure.java.shell :as sh]))
 
 (defn start-cljs [] (cljs/-main "auto" "development"))
 (defn start-css [] (css/-main "auto" "development"))
+(defn run-server [] (sh/sh "./bin/server"))
 
 (def threads
-  {:cljs (Thread. start-cljs)
-   :css  (Thread. start-css)})
+  {:cljs   (Thread. start-cljs)
+   :css    (Thread. start-css)
+   :server (Thread. run-server)})
 
 (defn shutdown []
   (log/report "---- DEV Task - Shutdown ----"))

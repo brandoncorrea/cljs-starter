@@ -1,14 +1,13 @@
 (ns stac.routes-spec
-  (:require-macros [stac.spec-helperc :refer [it-routes]]
-                   [speclj.core :refer [after before context describe it redefs-around should-be-nil should-have-invoked should-not-have-invoked should= stub with-stubs]])
-  (:require [stac.config :as config]
+  (:require-macros [speclj.core :refer [after before context describe]]
+                   [stac.spec-helperc :refer [it-routes]])
+  (:require [secretary.core :as secretary]
+            [speclj.core]
+            [stac.config :as config]
             [stac.page :as page]
-            [stac.router :as sut]
-            [secretary.core :as secretary]
-            [speclj.core]))
+            [stac.router :as sut]))
 
 (describe "Router"
-  (with-stubs)
   (before (page/clear!)
           (secretary/reset-routes!)
           (sut/defroutes))

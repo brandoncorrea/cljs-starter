@@ -1,4 +1,7 @@
 #! /bin/sh
 
 pushd resources/public
-http-server --proxy "http://localhost:8080?"
+
+PORT=8080
+echo "Starting server on Port: $PORT"
+http-server --proxy "http://localhost:$PORT?"

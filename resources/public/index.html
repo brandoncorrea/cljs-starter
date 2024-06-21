@@ -1,19 +1,21 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Coolest Website Ever</title>
-    <meta charset="utf-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0"/>
-    <script type="text/javascript" src="/cljs/stac.js"></script>
-    <link type="text/css" rel="stylesheet" href="/css/stac.css"/>
+  <title>Coolest Website Ever</title>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0"/>
+  <script type="text/javascript" src="/cljs/goog/base.js"></script>
+  <script type="text/javascript" src="/cljs/stac.js"></script>
+  <script type="text/javascript">goog.require("stac.main")</script>
+  <link type="text/css" rel="stylesheet" href="/css/stac.css"/>
 </head>
 <body>
 <div id="app-root">
-    <script type="text/javascript">
-        //<![CDATA[
-        stac.main.main();
-        //]]>
-    </script>
+  <script type="text/javascript">
+    //<![CDATA[
+    stac.main.main();
+    //]]>
+  </script>
 </div>
 </body>
 </html>

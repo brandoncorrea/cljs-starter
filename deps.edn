@@ -3,18 +3,21 @@
  :mvn/repos {"maven_central" {:url "https://repo.maven.apache.org/maven2/"}}
  :deps      {
              clj-commons/secretary          {:mvn/version "1.2.4"}
-             com.cleancoders.c3kit/scaffold {:git/url "git@github.com:cleancoders/c3kit-scaffold.git" :git/sha "9b748a671f68bedec5ff31530f6313b13db5b301"}
-             com.cleancoders.c3kit/wire     {:git/url "git@github.com:cleancoders/c3kit-wire.git" :git/sha "8e33865cde8108b11f3ff6b52f23f1921f4016cf"}
+             com.cleancoders.c3kit/scaffold {:mvn/version "2.0.3"}
+             com.cleancoders.c3kit/wire     {:mvn/version "2.1.4"}
              hiccup/hiccup                  {:mvn/version "1.0.5"}
-             org.clojure/clojure            {:mvn/version "1.11.1"}
-             org.clojure/clojurescript      {:mvn/version "1.11.60"}
+             org.clojure/clojure            {:mvn/version "1.11.3"}
+             org.clojure/clojurescript      {:mvn/version "1.11.132"}
              venantius/accountant           {:mvn/version "0.2.5"}
              }
  :aliases   {
-             :test {:extra-deps  {speclj/speclj {:mvn/version "3.4.3"}}
+             :test {:extra-deps  {speclj/speclj {:mvn/version "3.4.8"}}
                     :extra-paths ["spec/cljc" "spec/cljs"]}
              :cljs {:main-opts ["-m" "c3kit.scaffold.cljs"]}
              :css  {:main-opts ["-m" "c3kit.scaffold.css"]}
+             :dev  {:main-opts ["-m" "stac.dev"]}
              :dev- {:main-opts ["-m" "stac.dev" "cljs" "css"]}
+             :antq {:deps      {com.github.liquidz/antq {:mvn/version "2.8.1201"}}
+                    :main-opts ["-m" "antq.core"]}
              }
  }
